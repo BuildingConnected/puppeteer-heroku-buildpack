@@ -4,21 +4,10 @@ Installs dependencies needed in order to run puppeteer on heroku. Be sure to inc
 
 ## Usage
 
-To use the latest stable version run:
-
 ```sh-session
-$ heroku buildpacks:set jontewks/puppeteer
+$ heroku buildpacks:add https://github.com/BuildingConnected/puppeteer-heroku-buildpack.git
 ```
 
-Or use the source code in this repository:
+Include `--app` to specify which app, and `--index` with a number value so you include this buildpack after the ones we already have installed.
 
-```sh-session
-$ heroku buildpacks:set https://github.com/jontewks/puppeteer-heroku-buildpack.git
-```
-
-### Additional language support
-If you need support for Japanese, Chinese, or Korean fonts, a fork of this buildpack has been made to include those as well: https://github.com/CoffeeAndCode/puppeteer-heroku-buildpack
-
-## Issues
-
-If you run into any issues with this buildpack, please open an issue on this repo and/or submit a PR that resolves it. Different versions of chrome have different dependencies and so some issues can creep in without me knowing. Thanks!
+See https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app for more.
